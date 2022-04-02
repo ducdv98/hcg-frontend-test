@@ -1,0 +1,28 @@
+<div class="home-page">
+  <section class="trailer">
+    <carousel class="video-trailer" [autoplay]="true" [dots]="true" [cellsToShow]="3">
+      <div class="carousel-cell" *ngFor="let video of videos; let index = index">
+        <iframe class="h-full" [src]="video | bypass_dom_sanitizer: 'resourceUrl'" allowfullscreen></iframe>
+      </div>
+    </carousel>
+  </section>
+  <section class="pokemons">
+    <div class="flex justify-between items-center w-full">
+      <h3 class="text-lg font-bold">Pókemons</h3>
+      <a class="block flex gap-2 items-center text-xs text-gray-500" routerLink="pokemons">
+        <span>See more</span>
+        <i nz-icon nzType="double-right" nzTheme="outline"></i>
+      </a>
+    </div>
+    <app-pokemon-list [pokemons]="pokemons$ | async"
+                      (showDetails)="showPokemonDetails($event)">
+    </app-pokemon-list>
+  </section>
+
+  <section class="items">
+    <div class="flex justify-between items-center w-full">
+      <h3 class="text-lg font-bold">Items</h3>
+    </div>
+    <app-item-list [items]="items$ | async"></app-item-list>
+  </section>
+</div>

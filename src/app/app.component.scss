@@ -1,0 +1,43 @@
+#app-frame {
+  @apply absolute w-screen h-screen flex flex-col;
+  overflow: hidden;
+
+  > nz-spin {
+    @apply flex;
+    flex-grow: 1;
+
+    > .ant-spin-container {
+      @apply flex;
+      flex-grow: 1;
+    }
+  }
+}
+
+app-project {
+  @apply flex;
+  flex-grow: 1;
+  flex-direction: column;
+  /* for Firefox */
+  min-height: 0;
+}
+
+board-dnd {
+  @apply flex;
+  flex-grow: 1;
+}
+
+.global-spinner {
+  @apply min-h-screen;
+  .ant-spin {
+    max-height: unset !important;
+  }
+}
+
+//ng-zorro override
+body {
+  overflow: hidden;
+}
+
+.ant-modal-body {
+  padding: 0;
+}

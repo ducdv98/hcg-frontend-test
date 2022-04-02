@@ -1,0 +1,29 @@
+<div class="pokemons-page">
+  <form>
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" nz-input placeholder="Search pokémon" [formControl]="searchControl"/>
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon nzType="search"></i>
+    </ng-template>
+  </form>
+
+  <div class="pokemon-list">
+    <app-pokemon-list [pokemons]="pokemons$ | async"
+                      [loading]="loading$ | async"
+                      (showDetails)="showPokemonDetails($event)">
+    </app-pokemon-list>
+
+    <ng-container *ngIf="pokemonsPagination$ | async as pagination">
+      <nz-pagination [nzPageIndex]="pagination.pageNumber + 1"
+                     [nzPageSizeOptions]="[10,20,50,100]"
+                     nzSize="small"
+                     [nzTotal]="pagination.totalItems"
+                     nzShowSizeChanger [nzPageSize]="pagination.pageSize"
+                     (nzPageIndexChange)="onPageChange($event)"
+                     (nzPageSizeChange)="onPageSizeChange($event)"
+                     class="mt-8">
+      </nz-pagination>
+    </ng-container>
+  </div>
+</div>

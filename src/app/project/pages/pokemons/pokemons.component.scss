@@ -1,0 +1,7 @@
+.pokemon-page {
+  @apply w-full h-full flex flex-col;
+
+  .pokemon-list {
+    @apply flex flex-col gap-8;
+  }
+}

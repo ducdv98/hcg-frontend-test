@@ -1,0 +1,11 @@
+.home-page {
+  @apply w-full h-full flex flex-col;
+
+  .trailer {
+    @apply w-full;
+  }
+
+  section {
+    @apply w-full my-4 flex flex-col;
+  }
+}

@@ -1,0 +1,70 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="200px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a routerLink="/">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="vertical" [nzInlineCollapsed]="isCollapsed">
+      <li *ngFor="let item of menu"
+          [routerLink]="item.route"
+          nz-menu-item>
+        <i nz-icon [nzType]="item.icon"></i>
+        <span>{{item.label}}</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+        <button nz-button nz-dropdown [nzDropdownMenu]="versions" class="ml-6">
+          Versions
+          <i nz-icon nzType="down"></i>
+        </button>
+
+        <button nz-button nz-dropdown [nzDropdownMenu]="generations" class="ml-6">
+          Generations
+          <i nz-icon nzType="down"></i>
+        </button>
+
+        <button nz-button class="ml-6">
+          Locations
+        </button>
+
+        <button nz-button class="ml-6">
+          Items
+        </button>
+
+      </div>
+
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+
+<nz-dropdown-menu #versions="nzDropdownMenu">
+  <ul nz-menu *ngIf="gameVersions$ | async as versions">
+    <li nz-menu-item *ngFor="let version of versions">{{version.name}}</li>
+  </ul>
+</nz-dropdown-menu>
+
+<nz-dropdown-menu #generations="nzDropdownMenu">
+  <ul nz-menu *ngIf="generations$ | async as generations">
+    <li nz-menu-item *ngFor="let generation of generations">{{generation.name}}</li>
+  </ul>
+</nz-dropdown-menu>
