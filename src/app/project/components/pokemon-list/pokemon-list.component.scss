@@ -2,7 +2,7 @@
   @apply w-full flex flex-row flex-wrap justify-center;
 
   .pokemon {
-    @apply py-5 shadow m-4 w-36 rounded cursor-pointer hover:shadow-lg;
+    @apply py-5 shadow m-4 w-48 rounded cursor-pointer hover:shadow-lg;
 
     .pokemon-name {
       @apply text-center font-bold;

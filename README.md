@@ -2,7 +2,7 @@
 The entry frontend test of HCG.
 
 ## Demo
-https://ducdv98.github.io/hcg-frontend-test/
+https://exquisite-dodol-8bc3ba.netlify.app/
 
 ### Setting Up a Project
 - Clone this repository:
