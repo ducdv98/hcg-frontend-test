@@ -4,7 +4,7 @@ The entry frontend test of HCG.
 ## Demo
 https://exquisite-dodol-8bc3ba.netlify.app/
 
-### Setting Up a Project
+## Setting Up a Project
 - Clone this repository:
 
       git clone https://github.com/ducdv98/hcg-frontend-test.git
