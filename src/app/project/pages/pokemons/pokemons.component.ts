@@ -61,10 +61,6 @@ export class PokemonsComponent implements OnInit, OnDestroy {
     });
   }
 
-  onSubmit(): void {
-
-  }
-
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();

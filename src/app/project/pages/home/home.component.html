@@ -2,7 +2,7 @@
   <section class="trailer">
     <carousel class="video-trailer" [autoplay]="true" [dots]="true" [cellsToShow]="3">
       <div class="carousel-cell" *ngFor="let video of videos; let index = index">
-        <iframe class="h-full" [src]="video | bypass_dom_sanitizer: 'resourceUrl'" allowfullscreen></iframe>
+        <iframe class="h-full" [src]="video | bypass_dom_sanitizer: 'resourceUrl'" frameborder="0" allowfullscreen></iframe>
       </div>
     </carousel>
   </section>

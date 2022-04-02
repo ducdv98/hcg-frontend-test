@@ -8,6 +8,7 @@ import {
   PokemonDetailsModalComponent
 } from '@app/project/components/pokemon-details-modal/pokemon-details-modal.component';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -36,7 +37,7 @@ export class HomeComponent implements OnInit {
     this.pokemons$ = this._pokemonQuery.first10Pokemons$;
     this.items$ = this._pokemonQuery.itemsWithSprite$;
 
-    this.items$.subscribe(console.log)
+    this.items$.subscribe(console.log);
   }
 
   showPokemonDetails(pokemon: Pokemon): void {

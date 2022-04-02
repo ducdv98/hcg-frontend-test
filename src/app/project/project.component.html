@@ -25,8 +25,7 @@
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
             <i class="trigger"
                nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></i>
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
         </span>
         <button nz-button nz-dropdown [nzDropdownMenu]="versions" class="ml-6">
           Versions
@@ -38,11 +37,11 @@
           <i nz-icon nzType="down"></i>
         </button>
 
-        <button nz-button class="ml-6">
+        <button nz-button class="ml-6 hidden sm:inline-block">
           Locations
         </button>
 
-        <button nz-button class="ml-6">
+        <button nz-button class="ml-6 ml-6 hidden sm:inline-block">
           Items
         </button>
 

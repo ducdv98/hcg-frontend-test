@@ -8,7 +8,7 @@ import { ProjectService } from '@app/project/state/project/project.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  constructor(public projectQuery: ProjectQuery,
+  constructor(public _projectQuery: ProjectQuery,
               private _projectService: ProjectService,
               private _cdr: ChangeDetectorRef) {
     this._projectService.setLoading(true);

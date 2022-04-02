@@ -1,12 +1,10 @@
 <div class="pokemons-page">
-  <form>
-    <nz-input-group [nzSuffix]="suffixIconSearch">
-      <input type="text" nz-input placeholder="Search pokémon" [formControl]="searchControl"/>
-    </nz-input-group>
-    <ng-template #suffixIconSearch>
-      <i nz-icon nzType="search"></i>
-    </ng-template>
-  </form>
+  <nz-input-group [nzSuffix]="suffixIconSearch">
+    <input type="text" nz-input placeholder="Search pokémon" [formControl]="searchControl"/>
+  </nz-input-group>
+  <ng-template #suffixIconSearch>
+    <i nz-icon nzType="search"></i>
+  </ng-template>
 
   <div class="pokemon-list">
     <app-pokemon-list [pokemons]="pokemons$ | async"
